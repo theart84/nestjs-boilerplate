@@ -1,0 +1,60 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "tsconfigRootDir": "."
+  },
+  "settings": {
+    "import/ignore": ["node_modules"],
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "sonarjs",
+    "import"
+  ],
+  "rules": {
+    "import/order": ["error", {
+      "pathGroups": [{
+        "pattern": "@app/**",
+        "group": "external",
+        "position": "after"
+      }],
+      "newlines-between": "always-and-inside-groups"
+    }],
+    "import/first": ["error", "always"],
+    "@typescript-eslint/interface-name-prefix": ["error", "always"],
+    "object-curly-spacing": ["error", "always"],
+    "indent": ["error", 2],
+    "newline-after-var": ["error", "always"],
+    "newline-before-return": "error",
+    "no-console": "error",
+    "arrow-parens": ["error", "as-needed"],
+    "require-jsdoc": "off",
+    "@typescript-eslint/explicit-function-return-type": ["off"],
+    "arrow-body-style": ["error", "as-needed"],
+    "no-multiple-empty-lines": ["error", {
+      "max": 1,
+      "maxEOF": 1
+    }],
+    "max-len": ["error", {
+      "code": 120
+    }],
+    "operator-linebreak": ["error", "before"],
+    "comma-dangle": ["error", "always-multiline"]
+  }
+}
