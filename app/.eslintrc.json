@@ -15,6 +15,7 @@
   },
   "extends": [
     "eslint:recommended",
+    "google",
     "plugin:sonarjs/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -55,6 +56,7 @@
       "code": 120
     }],
     "operator-linebreak": ["error", "before"],
-    "comma-dangle": ["error", "always-multiline"]
+    "comma-dangle": ["error", "always-multiline"],
+    "new-cap": "off"
   }
 }
